@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-4">
+
+    </div>
+    <div class="col-md-4">
+        {% if success %}
+        <div class="alert alert-success alert-dismissible face show">Patient Added Successfully!</div>
+        <a href="{% url 'home' %}">Go Back</a>
+        {% else %}
+        <h3 class="mt-5">Add Patient</h3>
+        <form method="post">
+            {{ form.as_p }}
+            {% csrf_token %}
+            <input type="submit" value="Add Patient" class="btn btn-primary">
+        </form>
+        {% endif %}
+    </div>
+    <div class="col-md-4">
+
+    </div>
+</div>
+{% endblock content %}
