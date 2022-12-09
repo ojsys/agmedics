@@ -30,7 +30,7 @@ def add_patient(request):
     if request.method == 'POST':
         form = AddPatientForm(request.POST)
         if form.is_valid():
-            hostpital_no = form.cleaned_data['hostpital_no']
+            hospital_no = form.cleaned_data['hospital_no']
             firstname = form.cleaned_data['firstname']
             lastname = form.cleaned_data['lastname']
             date_of_birth = form.cleaned_data['date_of_birth']
@@ -41,7 +41,7 @@ def add_patient(request):
 
             # Add New Patient's Record
             new_patient = Patient(
-                hostpital_no = hostpital_no,
+                hospital_no = hospital_no,
                 firstname=firstname, 
                 lastname=lastname,
                 date_of_birth = date_of_birth,
